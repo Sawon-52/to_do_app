@@ -29,14 +29,14 @@ class _NutritionsScreenState extends State<NutritionsScreen> {
                       TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w900,
-                        color: Colors.black87,
+                        color: Colors.black,
                       )
                   ),),
                   Text('Nutritions', style:(
                       TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w900,
-                        color: Colors.black87,
+                        color: Colors.black,
                       )
                   ),)
                 ]
@@ -45,22 +45,22 @@ class _NutritionsScreenState extends State<NutritionsScreen> {
             Container(
               decoration: BoxDecoration(
                 color: Colors.black12,
-                borderRadius: BorderRadius.circular(15.0),
+                borderRadius: BorderRadius.circular(20.0),
               ),
-              width: 70,
-              height: 30,
+              width: 75,
+              height: 35,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Icon(
                     Icons.add,
-                    color: Colors.black38,
+                    color: Colors.black,
                     size: 20,
                   ),
                   // const SizedBox(width: 10),
                   Icon(
                     Icons.calendar_month,
-                    color: Colors.black38,
+                    color: Colors.black,
                     size: 20,
                   ),
                 ],
@@ -95,12 +95,12 @@ class _NutritionsScreenState extends State<NutritionsScreen> {
               children: [
                 Container(
                   padding:  EdgeInsets.symmetric(horizontal: 2.0, vertical: 0),
-                  margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 15),
+                  margin: EdgeInsets.only(bottom: 15.0) ,
                   // width: 500,
-                  height:40,
+                  height:50,
                   decoration: BoxDecoration(
                     color: Colors.black12 ,
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
                   child: Center(
                     child: Row(
@@ -108,6 +108,7 @@ class _NutritionsScreenState extends State<NutritionsScreen> {
                         children: [
                           CustomEatingTimeSlider(mealTime: 'Breakfast', isSelected: _selectedMealTime == 1),
                           CustomEatingTimeSlider(mealTime: 'Lunch', isSelected: _selectedMealTime == 2),
+                          Text('|'),
                           CustomEatingTimeSlider(mealTime: 'Dinner', isSelected: _selectedMealTime == 3),
                         ]
                     ) ,
@@ -116,7 +117,7 @@ class _NutritionsScreenState extends State<NutritionsScreen> {
 
                 Container(
                   child: Column(
-                    spacing: 6,
+                    spacing: 12,
                     children: [
                       customMealItemCard(
                         mealName: 'Salad with egg',

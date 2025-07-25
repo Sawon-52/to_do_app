@@ -17,14 +17,23 @@ class CustomMonthDaysCard extends StatelessWidget {
     return Container(
       width: 80,
       height: 85,
+      padding:  EdgeInsets.all(1),
       decoration: BoxDecoration(
-        color: isSelected ? Colors.deepOrange[400] : Colors.black12,
+        // color: isSelected ? Colors.deepOrange[400] : Colors.black12,
         borderRadius: BorderRadius.circular(15.0),
         border: isSelected
             ? Border.all(color: Colors.deepOrange, width: 1.0)
             : Border.all(color: Colors.grey, width: 1.0),
       ),
-      child: Center(
+      child: Container(
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.deepOrange[400] : Colors.black12,
+          borderRadius: BorderRadius.circular(15.0),
+          border: isSelected
+              ? Border.all(color: Colors.deepOrange, width: 1.0)
+              : Border.all(color: Colors.grey, width: 1.0),
+        ),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -63,15 +72,15 @@ class CustomEatingTimeSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      height:30,
+      height:45,
       decoration: BoxDecoration(
         color: isSelected ? Colors.white : null,
-        borderRadius: isSelected ? BorderRadius.circular(15.0): null,
+        borderRadius: isSelected ? BorderRadius.circular(25.0): null,
       ),
       child: Center(
           child: Text(mealTime, style:(
               TextStyle(
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: isSelected ? Colors.grey[900] : null,
               )
@@ -104,11 +113,15 @@ class customMealItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      // margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      elevation: 2.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+    return Container(
+      // padding:  EdgeInsets.symmetric(horizontal: 2.0, vertical: 0),
+      // margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 15),
+      // width: 500,
+      // height:50,
+      decoration: BoxDecoration(
+        // color: Colors.black12 ,
+        borderRadius: BorderRadius.circular(25.0),
+        border: Border.all(color: Colors.black12, width: 1.0)
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -123,7 +136,7 @@ class customMealItemCard extends StatelessWidget {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: Colors.blue[100],
                     borderRadius: BorderRadius.circular(10.0),
                     image: DecorationImage(
                       image: NetworkImage(imageUrl),
@@ -182,10 +195,17 @@ class customMealItemCard extends StatelessWidget {
                   ),
                 ),
                 // More button
-                IconButton(
-                  icon: Icon(Icons.more_horiz, color: Colors.grey),
-                  onPressed: null,
-                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black12 ,
+                    borderRadius: BorderRadius.circular(50.0),
+                    // border: Border.all(color: Colors.black12, width: 1.0)
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.more_horiz, color: Colors.black),
+                    onPressed: null,
+                  ),
+                )
               ],
             ),
             SizedBox(height: 30),
@@ -233,7 +253,13 @@ class customMealItemCard extends StatelessWidget {
             width: 6,
             height: 40,
             decoration: BoxDecoration(
-              color: color,
+              gradient: LinearGradient(
+                colors: [color, Colors.grey.shade300], 
+                stops: const [0.5, 0.5],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+              ),
+              // color: color,
               borderRadius: BorderRadius.circular(5),
             ),
           ),
